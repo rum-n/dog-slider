@@ -3,22 +3,6 @@ import styled from "styled-components";
 import { Slider } from "./components";
 import { Dog } from "./types/Dog";
 
-const MainContainer = styled.div`
-  display: flex;
-`;
-
-const LeftSideContainer = styled.div`
-  margin: 0;
-  background-color: #eeeeee;
-  width: 50%;
-  height: 100vh;
-`;
-const RightSideContainer = styled.div`
-  background-color: #ffffff;
-  width: 50%;
-  height: 100vh;
-`;
-
 function App() {
   const [breedsData, setBreedsData] = useState<Dog[]>([]);
   const [selectedBreeds, setSelectedBreeds] = useState<Dog[]>([]);
@@ -62,3 +46,26 @@ function App() {
 }
 
 export default App;
+
+const MainContainer = styled.main`
+  display: flex;
+`;
+
+const LeftSideContainer = styled.div`
+  margin: 0;
+  background-color: #eeeeee;
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+const RightSideContainer = styled.div`
+  background-color: #ffffff;
+  width: 50%;
+  height: 100vh;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
